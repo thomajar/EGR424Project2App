@@ -97,5 +97,64 @@ namespace EGR424Project2App
             }
             
         }
+
+        private void btnSendDemoImage_Click(object sender, EventArgs e)
+        {
+            //byte[] demoImage = {/*0xF0, 0x08, 0x08,*/
+            //                   0x00,0x00,0xFF,0xFF,
+            //                   0x00,0x00,0x00,0x00,
+            //                   0xFF,0xFF,0xFF,0xFF,
+            //                   0x00,0x00,0x00,0x00,
+            //                   0xFF,0xFF,0xFF,0xFF,
+            //                   0x00,0x00,0x00,0x00,
+            //                   0xFF,0xFF,0xFF,0xFF,
+            //                   0x00,0x00,0x00,0x00,
+
+            //                   };
+            //byte[] demoImage = {
+            //                       0xFF,0x08,0x08,
+            //                       0x44,0x44,0x44,0x44,
+            //                       0xCC,0xCC,0xCC,0xCC,
+            //                       0x44,0x44,0x44,0x44,
+            //                       0xCC,0xCC,0xCC,0xCC,
+            //                       0x44,0x44,0x44,0x44,
+            //                       0xCC,0xCC,0xCC,0xCC,
+            //                       0x44,0x44,0x44,0x44,
+            //                       0xCC,0xCC,0xCC,0xCC
+            //                   };
+
+            byte[] demoImage = null;
+            byte width, height;
+            byte value;
+            try
+            {
+                width = Convert.ToByte(txtDemoImageWidth.Text);
+                height = Convert.ToByte(txtDemoImageHeight.Text);
+                value = Convert.ToByte(txtDemoImageValue.Text);
+                demoImage = new byte[width * height / 2 + 3];
+                demoImage[0] = 0xFF;
+                demoImage[1] = width;
+                demoImage[2] = height;
+                for (int i = 3; i < demoImage.Length; i++)
+                {
+                    demoImage[i] = value;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+            try
+            {
+                sp.Write(demoImage, 0, demoImage.Length);
+            }
+            catch (Exception inner)
+            {
+                string errMsg = "Mainform.btnSendDemoImage : Error sending demo image to board.";
+                Exception ex = new Exception(errMsg, inner);
+                DisplayError(errMsg, inner);
+            }
+        }
     }
 }
