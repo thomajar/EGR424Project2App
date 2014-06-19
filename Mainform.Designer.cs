@@ -81,7 +81,7 @@
             this.btnRefreshComPorts.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshComPorts.Location = new System.Drawing.Point(334, 16);
             this.btnRefreshComPorts.Name = "btnRefreshComPorts";
-            this.btnRefreshComPorts.Size = new System.Drawing.Size(79, 32);
+            this.btnRefreshComPorts.Size = new System.Drawing.Size(113, 32);
             this.btnRefreshComPorts.TabIndex = 3;
             this.btnRefreshComPorts.Text = "Refresh";
             this.btnRefreshComPorts.UseVisualStyleBackColor = true;
@@ -99,6 +99,7 @@
             // 
             // txtCharToSend
             // 
+            this.txtCharToSend.Enabled = false;
             this.txtCharToSend.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCharToSend.Location = new System.Drawing.Point(143, 72);
             this.txtCharToSend.Name = "txtCharToSend";
@@ -107,6 +108,7 @@
             // 
             // btnSendChar
             // 
+            this.btnSendChar.Enabled = false;
             this.btnSendChar.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendChar.Location = new System.Drawing.Point(253, 70);
             this.btnSendChar.Name = "btnSendChar";
@@ -119,7 +121,7 @@
             // btnSendDemoImage
             // 
             this.btnSendDemoImage.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendDemoImage.Location = new System.Drawing.Point(16, 128);
+            this.btnSendDemoImage.Location = new System.Drawing.Point(12, 126);
             this.btnSendDemoImage.Name = "btnSendDemoImage";
             this.btnSendDemoImage.Size = new System.Drawing.Size(183, 32);
             this.btnSendDemoImage.TabIndex = 7;
@@ -130,7 +132,7 @@
             // txtDemoImageWidth
             // 
             this.txtDemoImageWidth.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageWidth.Location = new System.Drawing.Point(122, 220);
+            this.txtDemoImageWidth.Location = new System.Drawing.Point(122, 210);
             this.txtDemoImageWidth.Name = "txtDemoImageWidth";
             this.txtDemoImageWidth.Size = new System.Drawing.Size(100, 28);
             this.txtDemoImageWidth.TabIndex = 8;
@@ -138,7 +140,7 @@
             // txtDemoImageValue
             // 
             this.txtDemoImageValue.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageValue.Location = new System.Drawing.Point(122, 177);
+            this.txtDemoImageValue.Location = new System.Drawing.Point(122, 170);
             this.txtDemoImageValue.Name = "txtDemoImageValue";
             this.txtDemoImageValue.Size = new System.Drawing.Size(100, 28);
             this.txtDemoImageValue.TabIndex = 9;
@@ -146,7 +148,7 @@
             // txtDemoImageHeight
             // 
             this.txtDemoImageHeight.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageHeight.Location = new System.Drawing.Point(122, 254);
+            this.txtDemoImageHeight.Location = new System.Drawing.Point(122, 250);
             this.txtDemoImageHeight.Name = "txtDemoImageHeight";
             this.txtDemoImageHeight.Size = new System.Drawing.Size(100, 28);
             this.txtDemoImageHeight.TabIndex = 10;
@@ -155,7 +157,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 180);
+            this.label3.Location = new System.Drawing.Point(12, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 19);
             this.label3.TabIndex = 11;
@@ -165,7 +167,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 220);
+            this.label4.Location = new System.Drawing.Point(12, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(21, 19);
             this.label4.TabIndex = 12;
@@ -175,7 +177,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 263);
+            this.label5.Location = new System.Drawing.Point(12, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 19);
             this.label5.TabIndex = 13;
@@ -186,7 +188,7 @@
             this.btnImageBrowseAndSend.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImageBrowseAndSend.Location = new System.Drawing.Point(16, 320);
             this.btnImageBrowseAndSend.Name = "btnImageBrowseAndSend";
-            this.btnImageBrowseAndSend.Size = new System.Drawing.Size(227, 32);
+            this.btnImageBrowseAndSend.Size = new System.Drawing.Size(296, 32);
             this.btnImageBrowseAndSend.TabIndex = 14;
             this.btnImageBrowseAndSend.Text = "Browse and Send Image";
             this.btnImageBrowseAndSend.UseVisualStyleBackColor = true;
@@ -196,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 525);
+            this.ClientSize = new System.Drawing.Size(455, 372);
             this.Controls.Add(this.btnImageBrowseAndSend);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
