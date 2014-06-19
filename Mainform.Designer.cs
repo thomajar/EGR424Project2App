@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnImageBrowseAndSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmboComPorts
@@ -180,11 +181,23 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Y";
             // 
+            // btnImageBrowseAndSend
+            // 
+            this.btnImageBrowseAndSend.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImageBrowseAndSend.Location = new System.Drawing.Point(16, 320);
+            this.btnImageBrowseAndSend.Name = "btnImageBrowseAndSend";
+            this.btnImageBrowseAndSend.Size = new System.Drawing.Size(227, 32);
+            this.btnImageBrowseAndSend.TabIndex = 14;
+            this.btnImageBrowseAndSend.Text = "Browse and Send Image";
+            this.btnImageBrowseAndSend.UseVisualStyleBackColor = true;
+            this.btnImageBrowseAndSend.Click += new System.EventHandler(this.btnImageBrowseAndSend_Click);
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 525);
+            this.Controls.Add(this.btnImageBrowseAndSend);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -223,6 +236,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnImageBrowseAndSend;
     }
 }
 
