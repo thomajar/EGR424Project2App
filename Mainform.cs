@@ -151,7 +151,7 @@ namespace EGR424Project2App
         {
             // scale image
             Bitmap scaledImage = new Bitmap(128, 96);
-
+            
             // apply gain to the image
             float displayGain = 1.0f;
             float[][] matrix = {
@@ -190,15 +190,11 @@ namespace EGR424Project2App
             g.Dispose();
 
 
-
-            scaledImage.Save("temp.bmp");
-
-
             BitmapData B_data = scaledImage.LockBits(new Rectangle(0, 0, scaledImage.Width, scaledImage.Height),
                     ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
 
 
-            byte[] dataToSend = new byte[scaledImage.Width * scaledImage.Height / 2 + 3];
+            byte[] dataToSend = new byte[scaledImage.Width * scaledImage.Height / 2 + 10];
             dataToSend[0] = 0xFF;
             dataToSend[1] = (byte)scaledImage.Width;
             dataToSend[2] = (byte)scaledImage.Height;
