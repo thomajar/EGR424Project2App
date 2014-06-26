@@ -28,21 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.cmboComPorts = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnComOpen = new System.Windows.Forms.Button();
             this.btnRefreshComPorts = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCharToSend = new System.Windows.Forms.TextBox();
-            this.btnSendChar = new System.Windows.Forms.Button();
-            this.btnSendDemoImage = new System.Windows.Forms.Button();
-            this.txtDemoImageWidth = new System.Windows.Forms.TextBox();
-            this.txtDemoImageValue = new System.Windows.Forms.TextBox();
-            this.txtDemoImageHeight = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnImageBrowseAndSend = new System.Windows.Forms.Button();
+            this.btnStartVideoStream = new System.Windows.Forms.Button();
+            this.btnStopVideoStream = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBrowseVideoLocation = new System.Windows.Forms.Button();
+            this.txtVideoLocation = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboComPorts
@@ -87,129 +84,77 @@
             this.btnRefreshComPorts.UseVisualStyleBackColor = true;
             this.btnRefreshComPorts.Click += new System.EventHandler(this.btnRefreshComPorts_Click);
             // 
-            // label2
+            // btnStartVideoStream
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Char to Send:";
+            this.btnStartVideoStream.Image = ((System.Drawing.Image)(resources.GetObject("btnStartVideoStream.Image")));
+            this.btnStartVideoStream.Location = new System.Drawing.Point(46, 128);
+            this.btnStartVideoStream.Name = "btnStartVideoStream";
+            this.btnStartVideoStream.Size = new System.Drawing.Size(90, 90);
+            this.btnStartVideoStream.TabIndex = 15;
+            this.btnStartVideoStream.UseVisualStyleBackColor = true;
+            this.btnStartVideoStream.Click += new System.EventHandler(this.btnStartVideoStream_Click);
             // 
-            // txtCharToSend
+            // btnStopVideoStream
             // 
-            this.txtCharToSend.Enabled = false;
-            this.txtCharToSend.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCharToSend.Location = new System.Drawing.Point(143, 72);
-            this.txtCharToSend.Name = "txtCharToSend";
-            this.txtCharToSend.Size = new System.Drawing.Size(100, 28);
-            this.txtCharToSend.TabIndex = 5;
+            this.btnStopVideoStream.Enabled = false;
+            this.btnStopVideoStream.Image = ((System.Drawing.Image)(resources.GetObject("btnStopVideoStream.Image")));
+            this.btnStopVideoStream.Location = new System.Drawing.Point(177, 128);
+            this.btnStopVideoStream.Name = "btnStopVideoStream";
+            this.btnStopVideoStream.Size = new System.Drawing.Size(90, 90);
+            this.btnStopVideoStream.TabIndex = 16;
+            this.btnStopVideoStream.UseVisualStyleBackColor = true;
+            this.btnStopVideoStream.Click += new System.EventHandler(this.btnStopVideoStream_Click);
             // 
-            // btnSendChar
+            // groupBox1
             // 
-            this.btnSendChar.Enabled = false;
-            this.btnSendChar.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendChar.Location = new System.Drawing.Point(253, 70);
-            this.btnSendChar.Name = "btnSendChar";
-            this.btnSendChar.Size = new System.Drawing.Size(79, 32);
-            this.btnSendChar.TabIndex = 6;
-            this.btnSendChar.Text = "Send";
-            this.btnSendChar.UseVisualStyleBackColor = true;
-            this.btnSendChar.Click += new System.EventHandler(this.btnSendChar_Click);
+            this.groupBox1.Controls.Add(this.btnBrowseVideoLocation);
+            this.groupBox1.Controls.Add(this.txtVideoLocation);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnStartVideoStream);
+            this.groupBox1.Controls.Add(this.btnStopVideoStream);
+            this.groupBox1.Font = new System.Drawing.Font("Lucida Sans", 10.2F);
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(300, 234);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Video Stream Controls";
             // 
-            // btnSendDemoImage
+            // btnBrowseVideoLocation
             // 
-            this.btnSendDemoImage.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendDemoImage.Location = new System.Drawing.Point(12, 126);
-            this.btnSendDemoImage.Name = "btnSendDemoImage";
-            this.btnSendDemoImage.Size = new System.Drawing.Size(183, 32);
-            this.btnSendDemoImage.TabIndex = 7;
-            this.btnSendDemoImage.Text = "Send Demo Image";
-            this.btnSendDemoImage.UseVisualStyleBackColor = true;
-            this.btnSendDemoImage.Click += new System.EventHandler(this.btnSendDemoImage_Click);
+            this.btnBrowseVideoLocation.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseVideoLocation.Location = new System.Drawing.Point(25, 41);
+            this.btnBrowseVideoLocation.Name = "btnBrowseVideoLocation";
+            this.btnBrowseVideoLocation.Size = new System.Drawing.Size(261, 32);
+            this.btnBrowseVideoLocation.TabIndex = 19;
+            this.btnBrowseVideoLocation.Text = "Browse Video Location";
+            this.btnBrowseVideoLocation.UseVisualStyleBackColor = true;
+            this.btnBrowseVideoLocation.Click += new System.EventHandler(this.btnBrowseVideoLocation_Click);
             // 
-            // txtDemoImageWidth
+            // txtVideoLocation
             // 
-            this.txtDemoImageWidth.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageWidth.Location = new System.Drawing.Point(122, 210);
-            this.txtDemoImageWidth.Name = "txtDemoImageWidth";
-            this.txtDemoImageWidth.Size = new System.Drawing.Size(100, 28);
-            this.txtDemoImageWidth.TabIndex = 8;
+            this.txtVideoLocation.Font = new System.Drawing.Font("Lucida Sans", 10.2F);
+            this.txtVideoLocation.Location = new System.Drawing.Point(161, 91);
+            this.txtVideoLocation.Name = "txtVideoLocation";
+            this.txtVideoLocation.Size = new System.Drawing.Size(125, 28);
+            this.txtVideoLocation.TabIndex = 18;
             // 
-            // txtDemoImageValue
+            // label6
             // 
-            this.txtDemoImageValue.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageValue.Location = new System.Drawing.Point(122, 170);
-            this.txtDemoImageValue.Name = "txtDemoImageValue";
-            this.txtDemoImageValue.Size = new System.Drawing.Size(100, 28);
-            this.txtDemoImageValue.TabIndex = 9;
-            // 
-            // txtDemoImageHeight
-            // 
-            this.txtDemoImageHeight.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDemoImageHeight.Location = new System.Drawing.Point(122, 250);
-            this.txtDemoImageHeight.Name = "txtDemoImageHeight";
-            this.txtDemoImageHeight.Size = new System.Drawing.Size(100, 28);
-            this.txtDemoImageHeight.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 19);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Value";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 215);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 19);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "X";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 255);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 19);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Y";
-            // 
-            // btnImageBrowseAndSend
-            // 
-            this.btnImageBrowseAndSend.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImageBrowseAndSend.Location = new System.Drawing.Point(16, 320);
-            this.btnImageBrowseAndSend.Name = "btnImageBrowseAndSend";
-            this.btnImageBrowseAndSend.Size = new System.Drawing.Size(296, 32);
-            this.btnImageBrowseAndSend.TabIndex = 14;
-            this.btnImageBrowseAndSend.Text = "Browse and Send Image";
-            this.btnImageBrowseAndSend.UseVisualStyleBackColor = true;
-            this.btnImageBrowseAndSend.Click += new System.EventHandler(this.btnImageBrowseAndSend_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 19);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Video Location";
             // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 372);
-            this.Controls.Add(this.btnImageBrowseAndSend);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDemoImageHeight);
-            this.Controls.Add(this.txtDemoImageValue);
-            this.Controls.Add(this.txtDemoImageWidth);
-            this.Controls.Add(this.btnSendDemoImage);
-            this.Controls.Add(this.btnSendChar);
-            this.Controls.Add(this.txtCharToSend);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(335, 313);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefreshComPorts);
             this.Controls.Add(this.btnComOpen);
             this.Controls.Add(this.label1);
@@ -217,6 +162,8 @@
             this.Name = "Mainform";
             this.Text = "Project 2 Demo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,17 +175,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnComOpen;
         private System.Windows.Forms.Button btnRefreshComPorts;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCharToSend;
-        private System.Windows.Forms.Button btnSendChar;
-        private System.Windows.Forms.Button btnSendDemoImage;
-        private System.Windows.Forms.TextBox txtDemoImageWidth;
-        private System.Windows.Forms.TextBox txtDemoImageValue;
-        private System.Windows.Forms.TextBox txtDemoImageHeight;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnImageBrowseAndSend;
+        private System.Windows.Forms.Button btnStartVideoStream;
+        private System.Windows.Forms.Button btnStopVideoStream;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBrowseVideoLocation;
+        private System.Windows.Forms.TextBox txtVideoLocation;
+        private System.Windows.Forms.Label label6;
     }
 }
 

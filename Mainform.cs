@@ -16,12 +16,15 @@ namespace EGR424Project2App
     {
         private SerialPort sp;
 
+        private VideoStream videoStream;
+
 
         public Mainform()
         {
             InitializeComponent();
             DisplayAvailableComPorts();
             sp = new SerialPort();
+            videoStream = new VideoStream();
         }
 
         private void DisplayAvailableComPorts()
@@ -45,14 +48,9 @@ namespace EGR424Project2App
 
         private void btnComOpen_Click(object sender, EventArgs e)
         {
-            if (sp.IsOpen)
-            {
-                sp.Close();
-            }
             try
             {
-                sp = new SerialPort(cmboComPorts.Text, 115200, Parity.None, 8, StopBits.One);
-                sp.Open();
+                videoStream.OpenSerialPort(cmboComPorts.Text);
             }
             catch (Exception inner)
             {
@@ -74,67 +72,12 @@ namespace EGR424Project2App
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
         {
-            sp.Close();
+            videoStream.CloseSerialPort();
         }
 
-        private void btnSendChar_Click(object sender, EventArgs e)
-        {
-            string c = txtCharToSend.Text;
-            if (c.Length > 0)
-            {
-                char[] charToSend = new char[1];
-                charToSend[0] = c[0];
-                try
-                {
-                    sp.Write(charToSend, 0, 1);
-                }
-                catch (Exception inner)
-                {
-                    string errMsg = "Mainform.btnSendChar_Click : Error occured writing char to device.";
-                    Exception ex = new Exception(errMsg, inner);
-                    DisplayError(errMsg, ex);
-                }
-                
-            }
-            
-        }
+        
 
-        private void btnSendDemoImage_Click(object sender, EventArgs e)
-        {
-
-            byte[] demoImage = null;
-            byte width, height;
-            byte value;
-            try
-            {
-                width = Convert.ToByte(txtDemoImageWidth.Text);
-                height = Convert.ToByte(txtDemoImageHeight.Text);
-                value = Convert.ToByte(txtDemoImageValue.Text);
-                demoImage = new byte[width * height / 2 + 3];
-                demoImage[0] = 0xFF;
-                demoImage[1] = width;
-                demoImage[2] = height;
-                for (int i = 3; i < demoImage.Length; i++)
-                {
-                    demoImage[i] = value;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-
-            try
-            {
-                sp.Write(demoImage, 0, demoImage.Length);
-            }
-            catch (Exception inner)
-            {
-                string errMsg = "Mainform.btnSendDemoImage : Error sending demo image to board.";
-                Exception ex = new Exception(errMsg, inner);
-                DisplayError(errMsg, inner);
-            }
-        }
+       
 
         private void btnImageBrowseAndSend_Click(object sender, EventArgs e)
         {
@@ -242,6 +185,39 @@ namespace EGR424Project2App
 
 
             return null;
+        }
+
+        private void btnBrowseVideoLocation_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fd = new FolderBrowserDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                txtVideoLocation.Text = fd.SelectedPath;
+            }
+        }
+
+        private void btnStartVideoStream_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                videoStream.Start(txtVideoLocation.Text, 2.2);
+                btnStartVideoStream.Enabled = false;
+                btnStopVideoStream.Enabled = true;
+            }
+            catch (Exception inner)
+            {
+                string errMsg = "Mainform.btnStartVideoStream_Click : Unable to start VideoStream thread.";
+                Exception ex = new Exception(errMsg, inner);
+                DisplayError(errMsg, ex);
+            }
+            
+        }
+
+        private void btnStopVideoStream_Click(object sender, EventArgs e)
+        {
+            videoStream.Stop();
+            btnStartVideoStream.Enabled = true;
+            btnStopVideoStream.Enabled = false;
         }
     }
 }
